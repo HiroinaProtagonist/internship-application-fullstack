@@ -1,6 +1,0 @@
-name = "abtester"
-type = "javascript"
-account_id = "4180aff35b5385256d849ac22ff462e9"
-workers_dev = true
-route = ""
-zone_id = ""

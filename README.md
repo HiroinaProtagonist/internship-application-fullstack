@@ -1,85 +1,71 @@
-# Cloudflare Workers Internship Application: Full-Stack
-
-## What is it?
-
-Using Cloudflare Workers, you'll deploy an application that will randomly send users to one of two webpages. This project will teach you how to write applications with the Cloudflare Workers API, manage and develop them using the command-line tool Wrangler, and deploy them to the free workers.dev deployment playground.
-
-## Useful Links
-
-- [Workers Quick Start documentation](https://developers.cloudflare.com/workers/quickstart/)
-- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [HTMLRewriter](https://developers.cloudflare.com/workers/reference/apis/html-rewriter/)
-- [Cookie documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-
-## Get Started
-
-### 1. Install the workers command-line tool wrangler.
-
-The Workers Quick Start in the documentation shows how to get started with Wrangler, creating a project, and configuring and deploying it. We highly recommend that you spend time reading and following along with this guide!
-
-To begin, install the [Wrangler](https://github.com/cloudflare/wrangler) command-line tool.
-
-### 2. Generate a new project using `wrangler generate` command
-
-Using the `generate` command (covered in the Quick Start), generate a new project with a name of your choice:
-
-```sh
-$ wrangler generate your-project-name https://github.com/cloudflare-internship-2020/internship-application-fullstack
-```
-
-### 3. Use `wrangler dev` to locally test/develop your application
-
-The recently launched [`wrangler dev`](https://github.com/cloudflare/wrangler#-dev) feature will allow you to begin developing your application using `localhost` - this means that you can test your project locally and make sure it works, without having to sort out deployment until later in the exercise.
-
-Note that a major benefit of using `wrangler dev` is the ability to output `console.log` statements to your terminal - this is super useful for inspecting HTTP responses and variables!
-
-## Requirements
-
-### 1. Request the URLs from the API
-
-Make a fetch request inside of your script's event handler to the URL `https://cfw-takehome.developers.workers.dev/api/variants`, and parse the response as JSON. The response will be an array of URLs, which should be saved to a variable.
-
-### 2. Request a (random: see #3) variant
-
-Make a fetch request to one of the two URLs, and return it as the response from the script.
-
-### 3. Distribute requests between variants
-
-The `/api/variants` API route will return an array of two URLs. Requests should be evenly distributed between the two urls, in A/B testing style. This means that when a client makes a request to the Workers script, the script should roughly return each variant around 50% of the time.
+# Cloudflare Workers Internship Application - Full-Stack: Applicant Comments
 
 ## Deployment
+The project is deployed to https://abtester.hiroinaprotagonist.workers.dev
 
-### 1. Register a workers.dev subdomain
+This is an orientation to the coding style choices that I made for this project and to the comments and additional information that I am submitting with the code.
 
-Every Workers user has access to a free, unique workers.dev subdomain, which allows you to deploy your projects to a stable URL without needing to purchase domains and configure DNS records. Following the Quick Start linked above includes setting up a workers.dev subdomain!
+## General Information on Coding Style and The Project
 
-### 2. A user should be able to visit the deployed version of the site
+### 1. Style Choices:
+I looked through the examples in the template gallery and followed your generally observable conventions, as follows:
+I used single quotes rather than double quotes to denote strings.
+I left out all ending semicolons.
+I capitalized narrative comments and ended them with a period.
 
-Using wrangler's `publish` command, you can deploy your application and make it available under your workers.dev subdomain. Make sure to include this when you submit your project!
+Other style-related conventions that I followed:
+In html code, I used double quotes in the code and single quotes to denote the string containing said code.
 
-## Submitting your project
+I used template literals to describe constructions that would have required using the `+` operator to concatenate a string.
 
-When submitting your project, you should prepare your code for upload to Greenhouse. The preferred method for doing this is to create a "ZIP archive" of your project folder: for more instructions on how to do this on Windows and Mac, see [this guide](https://www.sweetwater.com/sweetcare/articles/how-to-zip-and-unzip-files/).
+### 2. Commenting Choices:
+`//`Denotes a permanent, generally narrative, comment.
+`// `Denotes an auto-commented comment, generally diagnostic, designed to be easily un- and re-commented in blocks of commented and uncommented code using `Ctrl-/`, if that has a standard implementation in the reader's software.
 
-In addition to submitting your project code, you should also submit the URL of your deployed project (see "Deployment"). This will be in the format `your-project-name.your-subdomain.workers.dev`.
+Functions are commented in JSDoc style, although I did not create a JSDoc file.
+I used Response instead of Promise as the type in comments. I believe this is most correct even though a successful Response is preceded by a Promise because the project works asynchronously.
 
-## Extra Credit
+I have left all of my diagnostic comments as comments in the code so you can get a better idea of my thought/troubleshooting/testing processes.
 
-### 1. Changing copy/URLs
+### 3. Choices regarding References:
 
-For each variant page, there are a number of items on the page that can be customized. Try changing the following values inside of the variant, adding your own text or URLs:
+If I copied, or copied and modified, a large block of code, I included a reference to the source of the original code above the block.
 
-- `title`: the title of the web page, displayed on the window or tab title in your browser.
-- `h1#title`: the main title of the page. By default, this displays "Variant 1" or "Variant 2"
-- `p#description`: the description paragraph on the page. By default, this displays the text "This is variant X of the take home project!".
-- `a#url`: a Call to Action link with strong emphasis on the page. Try changing this to a URL of your choice, such as your personal website, and make sure to update the text "Return to cloudflare.com" as well!
+I have included a list of references at the very bottom of this document. Those link to the template gallery resources that I found helpful. I thought that information might be useful to someone.
 
-This can be done using the [HTMLRewriter](https://developers.cloudflare.com/workers/reference/apis/html-rewriter/) API built into the Workers runtime, or using simple text replacement.
+### 4. Work Completed:
 
-### 2. Persisting variants
+1) Deployed a single page website based on a randomly chosen URL from the provided JSON data.
+See https://abtester.hiroinaprotagonist.workers.dev/
 
-If a user visits the site and receives one of the two URLs, persist which URL is chosen in a cookie so that they always see the same variant when they return to the application. A cookie would be a great way to implement this!
+2) Modified the web page's title, the main title on the page, the description paragraph on the page, and the text and URL of the Call to Action link on the page.
 
-### 3. Publish to a domain
+3) Set the initially chosen random URL to persist in a cookie so that the user sees that variant of the site (when appropriate, see 4). The user must visit the site once every 30 days or the cookie will expire.
 
-If you have a registered domain/zone with Cloudflare, try deploying your project by customizing the `zone_id` and `route` in your `wrangler.toml`. Make sure to check out the [Quick Start](https://developers.cloudflare.com/workers/quickstart) in the Workers docs for details on how to do this! **Note:** domains cost money, so if you don't have one, please don't feel obligated to buy one for this exercise. This is an extra credit task and you won't be penalized for skipping this one, we promise!
+4.a) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header).
+
+This feature works as expected in the tested versions of Firefox and Chrome.
+It works in Microsoft Edge, but requires a restart after changing the Do Not Track setting in order to properly set (or remove) the cookie.
+
+4.b) Added text to the description paragraph on the page that indicates whether or not the browser has Do Not Track enabled and is, or is not, using cookies.
+
+I do not have a registered domain or zone, so I did not implement that feature.
+
+### 4. Testing:
+Works as expected in the following browsers:
+1) Firefox 75.0 64-bit
+2) Microsoft Edge 44.18362.449.0 (See notes at item 4 of Work Completed)
+3) Chrome Version 81.0.4044.113 (Official Build) (64-bit)
+
+### 5. Potential Issues for Improvement:
+There are browser warnings about document type (Edge) and encoding (Firefox).
+
+Add error handling, especially to the gatherResponse function.
+
+Understand asynchronous JavaScript more fluently, particularly so that I could be more comfortable writing detailed comments and explanations.
+
+## Final Thoughts
+
+This was a great exercise. I learned a lot, was challenged a bit, and am excited to be in this application process and even more excited to potentially be a Cloudflare intern over the summer.
+
+Have a wonderful day.
