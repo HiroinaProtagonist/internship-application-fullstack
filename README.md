@@ -4,6 +4,8 @@
 
 The project is deployed to https://abtester.hiroinaprotagonist.workers.dev
 
+I realized after submitting that the repo is the project folder and a subfolder is not needed and fixed the file structure to match that. I also removed the following from a comment in my script file and moved it to this file. The project instructions are available in the PROJECT_REQS.md file. The project code has not been modified.
+
 This is an orientation to the coding style choices that I made for this project and to the comments and additional information that I am submitting with the code.
 
 ## General Information on Coding Style and The Project
