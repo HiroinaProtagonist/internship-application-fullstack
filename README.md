@@ -4,29 +4,37 @@
 
 The project is deployed to https://abtester.hiroinaprotagonist.workers.dev
 
-I realized after submitting that the repo is the project folder and a subfolder is not needed and fixed the file structure to match that. I also removed the following from a comment in my script file and moved it to this file. The project instructions are available in the PROJECT_REQS.md file. The project code has not been modified.
+I realized after submitting that the repo is the project folder and a subfolder is not needed and fixed the file structure to match that. I also removed the following from a comment in my script file and moved it to this file. The project instructions are available in the PROJECT_REQS.md file. The project code has not been modified after submission except to remove my comment about the project, which now makes up this file.
 
-This is an orientation to the coding style choices that I made for this project and to the comments and additional information that I am submitting with the code.
 
 ## General Information on Coding Style and The Project
+
+This is an orientation to the coding style choices that I made for this project and to the comments and additional information that I am submitting with the code.
 
 ### 1. Style Choices:
 
 I looked through the examples in the template gallery and followed your generally observable conventions, as follows:
+
 I used single quotes rather than double quotes to denote strings.
+
 I left out all ending semicolons.
+
 I capitalized narrative comments and ended them with a period.
 
 Other style-related conventions that I followed:
+
 In html code, I used double quotes in the code and single quotes to denote the string containing said code.
+
 I used template literals to describe constructions that would have required using the `+` operator to concatenate a string.
 
 ### 2. Commenting Choices:
 
 `//`Denotes a permanent, generally narrative, comment.
+
 `// `Denotes an auto-commented comment, generally diagnostic, designed to be easily un- and re-commented in blocks of commented and uncommented code using `Ctrl-/`, if that has a standard implementation in the reader's software.
 
 Functions are commented in JSDoc style, although I did not create a JSDoc file.
+
 I used Response instead of Promise as the type in comments. I believe this is most correct even though a successful Response is preceded by a Promise because the project works asynchronously.
 
 I have left all of my diagnostic comments as comments in the code so you can get a better idea of my thought/troubleshooting/testing processes.
@@ -46,12 +54,10 @@ See https://abtester.hiroinaprotagonist.workers.dev/
 
 3) Set the initially chosen random URL to persist in a cookie so that the user sees that variant of the site depending on their Do Not Track settings, as specified in 4. The user must visit the site once every 30 days or the cookie will expire.
 
-4.a) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header).
-
-This feature works as expected in the tested versions of Firefox and Chrome.
+4a) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header). This feature works as expected in the tested versions of Firefox and Chrome.
 It works in Microsoft Edge, but requires a restart after changing the Do Not Track setting in order to properly set (or remove) the cookie.
 
-4.b) Added text to the description paragraph on the page that indicates whether or not the browser has Do Not Track enabled and is, or is not, using cookies.
+4b) Added text to the description paragraph on the page that indicates whether or not the browser has Do Not Track enabled and is, or is not, using cookies.
 
 I do not have a registered domain or zone, so I did not implement that feature.
 
@@ -64,7 +70,7 @@ Works as expected in the following browsers:
 
 ### 5. Potential Issues for Improvement:
 
-There are browser warnings about document type (Edge) and encoding (Firefox).
+Resolve browser warnings about document type (Edge) and encoding (Firefox).
 
 Add error handling, especially to the gatherResponse function.
 
@@ -72,6 +78,6 @@ Understand asynchronous JavaScript more fluently, particularly so that I could b
 
 ## Final Thoughts
 
-This was a great exercise. I learned a lot, was challenged a bit, and am excited to be in this application process and even more excited to potentially be a Cloudflare intern over the summer.
+This was a great exercise. I learned a lot, was challenged a bit, and I am excited to be in this application process and even more excited to potentially become a Cloudflare intern.
 
 Have a wonderful day.
