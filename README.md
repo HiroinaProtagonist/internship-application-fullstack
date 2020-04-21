@@ -54,10 +54,10 @@ See https://abtester.hiroinaprotagonist.workers.dev/
 
 3) Set the initially chosen random URL to persist in a cookie so that the user sees that variant of the site depending on their Do Not Track settings, as specified in 4. The user must visit the site once every 30 days or the cookie will expire.
 
-4a) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header). This feature works as expected in the tested versions of Firefox and Chrome.
+4) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header). This feature works as expected in the tested versions of Firefox and Chrome.
 It works in Microsoft Edge, but requires a restart after changing the Do Not Track setting in order to properly set (or remove) the cookie.
 
-4b) Added text to the description paragraph on the page that indicates whether or not the browser has Do Not Track enabled and is, or is not, using cookies.
+5) Added text to the description paragraph on the page that indicates whether or not the browser has Do Not Track enabled and is, or is not, using cookies.
 
 I do not have a registered domain or zone, so I did not implement that feature.
 
