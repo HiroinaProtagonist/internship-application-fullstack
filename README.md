@@ -1,6 +1,7 @@
 # Cloudflare Workers Internship Application - Full-Stack: Applicant Comments
 
 ## Deployment
+
 The project is deployed to https://abtester.hiroinaprotagonist.workers.dev
 
 This is an orientation to the coding style choices that I made for this project and to the comments and additional information that I am submitting with the code.
@@ -8,6 +9,7 @@ This is an orientation to the coding style choices that I made for this project 
 ## General Information on Coding Style and The Project
 
 ### 1. Style Choices:
+
 I looked through the examples in the template gallery and followed your generally observable conventions, as follows:
 I used single quotes rather than double quotes to denote strings.
 I left out all ending semicolons.
@@ -15,10 +17,10 @@ I capitalized narrative comments and ended them with a period.
 
 Other style-related conventions that I followed:
 In html code, I used double quotes in the code and single quotes to denote the string containing said code.
-
 I used template literals to describe constructions that would have required using the `+` operator to concatenate a string.
 
 ### 2. Commenting Choices:
+
 `//`Denotes a permanent, generally narrative, comment.
 `// `Denotes an auto-commented comment, generally diagnostic, designed to be easily un- and re-commented in blocks of commented and uncommented code using `Ctrl-/`, if that has a standard implementation in the reader's software.
 
@@ -40,7 +42,7 @@ See https://abtester.hiroinaprotagonist.workers.dev/
 
 2) Modified the web page's title, the main title on the page, the description paragraph on the page, and the text and URL of the Call to Action link on the page.
 
-3) Set the initially chosen random URL to persist in a cookie so that the user sees that variant of the site (when appropriate, see 4). The user must visit the site once every 30 days or the cookie will expire.
+3) Set the initially chosen random URL to persist in a cookie so that the user sees that variant of the site depending on their Do Not Track settings, as specified in 4. The user must visit the site once every 30 days or the cookie will expire.
 
 4.a) Extended the implementation of the cookie so that the application either sets, does not set, or removes the cookie based on the browser's Do Not Track setting (retrieved from the appropriate header).
 
@@ -52,12 +54,14 @@ It works in Microsoft Edge, but requires a restart after changing the Do Not Tra
 I do not have a registered domain or zone, so I did not implement that feature.
 
 ### 4. Testing:
+
 Works as expected in the following browsers:
 1) Firefox 75.0 64-bit
 2) Microsoft Edge 44.18362.449.0 (See notes at item 4 of Work Completed)
 3) Chrome Version 81.0.4044.113 (Official Build) (64-bit)
 
 ### 5. Potential Issues for Improvement:
+
 There are browser warnings about document type (Edge) and encoding (Firefox).
 
 Add error handling, especially to the gatherResponse function.
