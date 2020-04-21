@@ -61,14 +61,14 @@ It works in Microsoft Edge, but requires a restart after changing the Do Not Tra
 
 I do not have a registered domain or zone, so I did not implement that feature.
 
-### 4. Testing:
+### 5. Testing:
 
 Works as expected in the following browsers:
 1) Firefox 75.0 64-bit
 2) Microsoft Edge 44.18362.449.0 (See notes at item 4 of Work Completed)
 3) Chrome Version 81.0.4044.113 (Official Build) (64-bit)
 
-### 5. Potential Issues for Improvement:
+### 6. Potential Issues for Improvement:
 
 Resolve browser warnings about document type (Edge) and encoding (Firefox).
 
