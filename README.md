@@ -43,7 +43,7 @@ I have left all of my diagnostic comments as comments in the code so you can get
 
 If I copied, or copied and modified, a large block of code, I included a reference to the source of the original code above the block.
 
-I have included a list of references at the very bottom of this document. Those link to the template gallery resources that I found helpful. I thought that information might be useful to someone.
+I have included a list of references at the very bottom of index.js. Those link to the template gallery resources that I found helpful. I thought that information might be useful to someone.
 
 ### 4. Work Completed:
 
