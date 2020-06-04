@@ -4,8 +4,7 @@
 
 The project is deployed to https://abtester.hiroinaprotagonist.workers.dev
 
-I realized after submitting that the repo is the project folder and a subfolder is not needed and fixed the file structure to match that. I also removed the following from a comment in my script file and moved it to this file. The project instructions are available in the PROJECT_REQS.md file. The project code has not been modified after submission except to remove my comment about the project, which now makes up this file.
-
+The project definition is available in the PROJECT_REQS.md file.
 
 ## General Information on Coding Style and The Project
 
@@ -34,10 +33,6 @@ I used template literals to describe constructions that would have required usin
 `// `Denotes an auto-commented comment, generally diagnostic, designed to be easily un- and re-commented in blocks of commented and uncommented code using `Ctrl-/`, if that has a standard implementation in the reader's software.
 
 Functions are commented in JSDoc style, although I did not create a JSDoc file.
-
-I used Response instead of Promise as the type in comments. I believe this is most correct even though a successful Response is preceded by a Promise because the project works asynchronously.
-
-I have left all of my diagnostic comments as comments in the code so you can get a better idea of my thought/troubleshooting/testing processes.
 
 ### 3. Choices regarding References:
 
@@ -73,8 +68,6 @@ Works as expected in the following browsers:
 Resolve browser warnings about document type (Edge) and encoding (Firefox).
 
 Add error handling, especially to the gatherResponse function.
-
-Understand asynchronous JavaScript more fluently, particularly so that I could be more comfortable writing detailed comments and explanations.
 
 ## Final Thoughts
 
